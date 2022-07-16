@@ -8,6 +8,8 @@ import LoadingBar from 'react-redux-loading-bar';
 import { Home, Brand } from './header-components';
 import { AdminMenu, EntitiesMenu, AccountMenu } from '../menus';
 
+import { ProductNew } from 'app/entities/product/product-new';
+
 export interface IHeaderProps {
   isAuthenticated: boolean;
   isAdmin: boolean;
@@ -21,8 +23,8 @@ const Header = (props: IHeaderProps) => {
 
   const renderDevRibbon = () =>
     props.isInProduction === false ? (
-      <div className="ribbon dev">
-        <a href="">Development</a>
+      <div className="">
+        
       </div>
     ) : null;
 
@@ -40,9 +42,10 @@ const Header = (props: IHeaderProps) => {
         <Collapse isOpen={menuOpen} navbar>
           <Nav id="header-tabs" className="ms-auto" navbar>
             <Home />
+            { ProductNew }
             {props.isAuthenticated && <EntitiesMenu />}
             {props.isAuthenticated && props.isAdmin && (
-              <AdminMenu showOpenAPI={props.isOpenAPIEnabled} showDatabase={!props.isInProduction} />
+            <AdminMenu showOpenAPI={props.isOpenAPIEnabled} showDatabase={!props.isInProduction} />
             )}
             <AccountMenu isAuthenticated={props.isAuthenticated} />
           </Nav>

@@ -12,7 +12,7 @@ import { useAppDispatch, useAppSelector } from 'app/config/store';
 import { IProduct } from 'app/shared/model/product.model';
 import { getEntities } from './product.reducer';
 
-export const Product = (props: RouteComponentProps<{ url: string }>) => {
+export const ProductNew = (props: RouteComponentProps<{ url: string }>) => {
   const dispatch = useAppDispatch();
 
   const [paginationState, setPaginationState] = useState(
@@ -92,10 +92,10 @@ export const Product = (props: RouteComponentProps<{ url: string }>) => {
             <FontAwesomeIcon icon="sync" spin={loading} /> Refresh List
           </Button>
           
-          <Link to="/product/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
+          {/* <Link to="/product/new" className="btn btn-primary jh-create-entity" id="jh-create-entity" data-cy="entityCreateButton">
             <FontAwesomeIcon icon="plus" />
             &nbsp; Create new Product
-          </Link>
+          </Link> */}
           
         </div>
       </h2>
@@ -214,4 +214,4 @@ export const Product = (props: RouteComponentProps<{ url: string }>) => {
   );
 };
 
-export default Product;
+// export default ProductNew;
