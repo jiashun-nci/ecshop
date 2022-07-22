@@ -1,4 +1,3 @@
-# new
 # eCommerce shop development using Spring boot and ReactJs
 
 ## Project Structure
